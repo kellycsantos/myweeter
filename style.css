@@ -1,0 +1,354 @@
+:root{
+    --bg-color: #fff;
+    --main-blue: #1ca1f1;
+    --border-color: #d3d3d3;
+    --aside-color:#f5f5f5;
+}
+
+
+
+
+
+*{
+    /*Reset*/
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+    box-sizing: border-box;
+    border:none;
+    background: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    color:  #2a2c2c;
+}
+
+body{
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 15vw 85vw ;
+    grid-template-areas: "nav main aside";
+    overflow-x: hidden;
+}
+
+
+
+nav{
+    grid-area: nav;
+    height: 100vh;
+    font-weight: 300;   
+    border-right: 1px solid var(--border-color); 
+
+}
+
+nav ul li a{
+    flex-direction: row;
+    flex-shrink: 1;
+    font-size: 0;
+}
+
+nav ul li a img{
+    width: 10vw;
+    margin: 1vh;
+}
+
+main{
+    grid-area: main;
+    text-align: right;
+}
+
+#caixa{
+    width: 100%;
+    min-height: 15vh;
+    max-height: 15vh;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 2vh 1.5vw;
+    border: 1px solid var(--border-color);
+
+}
+
+#menu-post{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: .5vh;
+}
+
+#menu-post input[type="file"]{
+ display: none;
+ 
+}
+
+.btn-menu-post-img img{
+    background: none;
+    height: 4vh;
+    margin: 2vh 4vw 1vh 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#btn-tweetar{
+    width: 30vw;
+    height: 5vh;
+    background: var(--main-blue);
+    border-radius: 15px;
+    color: white;
+}
+
+
+article{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+article li{
+    border: 1px solid var(--border-color);
+    min-height: 10vh;
+    text-align: left;
+    padding: 1.7vh 2vw;
+    margin :.5vh 1vw;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-btn-tweet{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    bottom:-5px;
+    height: 4vh;
+}
+
+.container-btn-tweet img{
+    cursor: pointer;
+    height: 20px;
+    margin-top: 10px ;
+
+}
+
+.btn-tweet-post:nth-child(2) img{
+    width: 25px;
+    height: 20px;
+
+
+}
+
+
+#aside-btn-tweetar{
+    width: 95%;
+    height: 4vh;
+    margin: 0 2.5%;
+    font-size: 12px;
+    background: var(--main-blue);
+    color: white;
+    cursor: pointer;
+}
+
+aside{
+    display: none;
+}
+
+
+@media screen and (min-width:768px) {
+    #container{
+        grid-template-areas: "nav main ";
+        grid-template-columns: 25vw 72vw;
+    }
+
+    nav{
+        grid-area: nav;
+    
+    }
+
+    nav ul li a{
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        margin: 2vh 0;
+    }
+
+    nav ul li:nth-child(1) img{
+        margin: 0 auto;
+    }
+
+    nav ul li a img{
+        width: 5vw;
+        margin: 0 2vw;
+    }
+
+    #aside-btn-tweetar{
+        width: 60%;
+        margin:0 20%;
+        height: 4vh;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+    
+    main{
+        grid-area: main;
+       
+    }
+
+    #btn-tweetar{
+        height: 4vh;
+        width: 20vw;
+        font-size: 18px;
+    }
+
+    #menu-post{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin-top: .5vh;
+    }
+    
+
+    aside{
+        display: none;
+    }
+}
+
+@media screen and (min-width:1020px){
+    body{
+        padding: 1vh 2vw ;
+    }
+
+    #container{
+        grid-template-areas: "nav main aside";
+        grid-template-columns: 15vw 55vw 20vw;
+    }
+
+
+    nav{
+        grid-area: nav;
+    }
+
+    nav ul li a{
+        font-size: 18px;
+        margin: 5vh 0;
+
+    }
+
+    nav ul li a img{
+        width: 40px;
+        margin-right: 5px;
+    }
+
+    
+    main{
+        grid-area: main;       
+    }
+
+    #btn-tweetar{
+        width: 15vw;
+        height: 5vh;
+    }
+
+    aside{
+        grid-area: aside;
+        display: block;
+        background: #FFF;
+        height: 100vh;
+        margin-left: 30px;
+        border-radius: 10px;
+    }
+
+    /*Resetar background dos elementos aside*/
+    aside input[type="search"],h2, aside span ,aside ul li, 
+    .nome-usuario,.nickname-usuario, aside section,aside small ,.hastag{
+            background: var(--aside-color);
+    }
+
+    aside section{
+        border-radius: 8px;
+        padding: 3px;
+        margin: 5px 0 10px 0;
+    }
+
+    aside input[type="search"]{
+        width: 90%;
+        height: 4vh;
+        border-radius: 30px;
+        margin: 10px 5%;
+        padding: 10px;
+    }
+
+    aside h2{
+        font-size: 1.1vw;
+        margin: 5px ;
+    }
+
+    aside .hastag-container{
+        padding: 5px 0 5px 2px;
+    }
+
+    .hastag{
+        color: var(--main-blue);
+    }
+
+    .hastag:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+
+    aside .lista-sugestao-seguidores{
+        display: flex;
+        align-items: center;
+        padding: 5px;
+    }
+
+    aside span{
+        width: 50%;
+    }
+
+    .lista-sugestao-seguidores .nome-usuario{
+        font-weight: 900;
+    }
+
+    .lista-sugestao-seguidores .nickname-usuario{
+        color: #777777;
+        font-size: small;
+    }
+
+    .lista-sugestao-seguidores .nickname-usuario:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    aside .lista-sugestao-seguidores img{
+        width: 55px;
+        border: 1px solid #2a2c2c6b;
+        border-radius: 50%;
+        margin-right: 2%;
+    }
+
+    .btn-seguir-aside{
+        background: black;
+        margin: 0 auto;
+        color: #FFF;
+        height: 35px;
+        width: 60px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .6s;
+    }
+
+    .btn-seguir-aside:hover{
+        color: black;
+        background: white;
+        border: .5px solid black;
+        transition: .3s;
+    }
+ 
+}
