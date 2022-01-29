@@ -15,8 +15,8 @@ let caixaInput = document.getElementById('caixa').value
 
 //menu interação
   const menuTweeter = `<span class="container-btn-tweet">
-                            <label for="retweet" class="btn-tweet-post"><img src="/icones/fav-icon.png"></label>
-                            <label for="like" class="btn-tweet-post"><img src="/icones/retweet-icon.png"></label>                            
+                            <label for="retweet" class="btn-tweet-post"><img src="./icones/fav-icon.png"></label>
+                            <label for="like" class="btn-tweet-post"><img src="./icones/retweet-icon.png"></label>                            
                         </span>`
 
 
