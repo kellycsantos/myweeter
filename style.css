@@ -43,6 +43,7 @@ nav{
     height: 100vh;
     font-weight: 300;   
     border-right: 1px solid var(--border-color); 
+    position: fixed;
 
 }
 
